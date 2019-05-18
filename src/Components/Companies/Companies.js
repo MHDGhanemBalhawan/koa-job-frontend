@@ -1,7 +1,8 @@
 import React from "react";
 import Company from "./Company";
+import Job from "../Jobs/Job";
 import HttpService from "../../services/http-service";
-import { CardColumns } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 const http = new HttpService();
 export default class Companies extends React.Component {
   constructor(props) {
@@ -27,14 +28,30 @@ export default class Companies extends React.Component {
   };
   companiesList = () => {
     let list = this.state.companies.map(company => (
-      <CardColumns key={company.id}>
-        <Company
-          id={company.id}
-          name={company.name}
-          address={company.address}
-          email={company.email}
-        />
-      </CardColumns>
+      <Container className="text-center fluid" key={company.id}>
+        <Row>
+          <Col>
+            <Company
+              id={company.id}
+              name={company.name}
+              address={company.address}
+              email={company.email}
+            />
+          </Col>
+        </Row>
+        <Row>
+          {company.Jobs.map(job => (
+            <Job
+              key={job.id}
+              id={job.id}
+              title={job.title}
+              createdAt={job.createdAt}
+              updatedAt={job.updatedAt}
+              companyId={job.CompanyId}
+            />
+          ))}
+        </Row>
+      </Container>
     ));
     return list;
   };
