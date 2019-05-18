@@ -51,6 +51,8 @@ export default class Companies extends React.Component {
             />
           ))}
         </Row>
+        <br />
+        <hr />
       </Container>
     ));
     return list;
