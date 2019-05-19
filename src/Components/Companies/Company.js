@@ -1,5 +1,5 @@
 import React from "react";
-import { ListGroup, Card, Button, Alert } from "react-bootstrap";
+import { Button, Alert } from "react-bootstrap";
 export default class Company extends React.Component {
   render() {
     return (

@@ -5,6 +5,7 @@ import Navigation from "./Components/Navigation/Navigation";
 import Companies from "./Components/Companies/Companies";
 import Jobs from "./Components/Jobs/Jobs";
 import Home from "./Components/Home/Home";
+import Candidates from "./Components/Candidates/Candidates";
 export default class App extends Component {
   render() {
     return (
@@ -18,6 +19,7 @@ export default class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/Jobs" component={Jobs} />
             <Route path="/Companies" component={Companies} />
+            <Route path="/Candidates" component={Candidates} />
           </Router>
         </div>
       </div>

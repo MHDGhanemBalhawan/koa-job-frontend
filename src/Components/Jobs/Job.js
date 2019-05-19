@@ -5,7 +5,7 @@ export default class Job extends React.Component {
     return (
       <Col sm={4}>
         <Card key={this.props.id} style={{ width: "18rem" }}>
-          <ListGroup variant="flush">
+          <ListGroup variant="success">
             <ListGroup.Item>job id {this.props.id}</ListGroup.Item>
             <ListGroup.Item>job title {this.props.title}</ListGroup.Item>
             <ListGroup.Item>

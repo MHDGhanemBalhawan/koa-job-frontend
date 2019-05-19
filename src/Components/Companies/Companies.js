@@ -21,7 +21,6 @@ export default class Companies extends React.Component {
     http.getCompanies().then(
       data => {
         self.setState({ companies: data });
-        console.log(data);
       },
       err => {}
     );

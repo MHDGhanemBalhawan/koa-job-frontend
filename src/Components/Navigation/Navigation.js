@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Companies from "../Companies/Companies";
 import Jobs from "../Jobs/Jobs";
 import Home from "../Home/Home";
+import Candidates from "../Candidates/Candidates";
 class Navigation extends React.Component {
   render() {
     return (
@@ -41,6 +42,16 @@ class Navigation extends React.Component {
                   Jobs
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/Candidates" className="nav-link">
+                  Candidates
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/Applications" className="nav-link">
+                  Applications
+                </Link>
+              </li>
 
               <li className="nav-item">
                 <a className="nav-link" href="/">
@@ -71,6 +82,7 @@ class Navigation extends React.Component {
         <Route path="/" exact component={Home} />
         <Route path="/Jobs/" component={Jobs} />
         <Route path="/Companies/" component={Companies} />
+        <Route path="/Candidates/" component={Candidates} />
       </Router>
     );
   }
