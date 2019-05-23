@@ -1,7 +1,8 @@
 import React from "react";
 import Job from "./Job";
+import "./jobs.css";
 import HttpService from "../../services/http-service";
-import { CardColumns } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 const http = new HttpService();
 export default class Jobs extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ export default class Jobs extends React.Component {
   };
   JobsList = () => {
     let listJobs = this.state.Jobs.map(job => (
-      <CardColumns key={job.id}>
+      <Col sm={4} key={job.id} className="job">
         <Job
           id={job.id}
           title={job.title}
@@ -35,7 +36,7 @@ export default class Jobs extends React.Component {
           updatedAt={job.updatedAt}
           CompanyId={job.CompanyId}
         />
-      </CardColumns>
+      </Col>
     ));
     return listJobs;
   };
@@ -43,9 +44,11 @@ export default class Jobs extends React.Component {
   render() {
     return (
       <div>
-        <div className="jobs">
+        <div className="jobs Container">
           <header className="Jobs-header" />
-          {this.JobsList()}
+          <Container>
+            <Row>{this.JobsList()}</Row>
+          </Container>
         </div>
       </div>
     );

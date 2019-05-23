@@ -5,6 +5,7 @@ import Companies from "../Companies/Companies";
 import Jobs from "../Jobs/Jobs";
 import Home from "../Home/Home";
 import Candidates from "../Candidates/Candidates";
+import Applications from "../Applications/Applications";
 class Navigation extends React.Component {
   render() {
     return (
@@ -83,6 +84,7 @@ class Navigation extends React.Component {
         <Route path="/Jobs/" component={Jobs} />
         <Route path="/Companies/" component={Companies} />
         <Route path="/Candidates/" component={Candidates} />
+        <Route path="/Applications/" component={Applications} />
       </Router>
     );
   }

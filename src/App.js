@@ -6,6 +6,7 @@ import Companies from "./Components/Companies/Companies";
 import Jobs from "./Components/Jobs/Jobs";
 import Home from "./Components/Home/Home";
 import Candidates from "./Components/Candidates/Candidates";
+import Applications from "./Components/Applications/Applications";
 export default class App extends Component {
   render() {
     return (
@@ -20,6 +21,7 @@ export default class App extends Component {
             <Route path="/Jobs" component={Jobs} />
             <Route path="/Companies" component={Companies} />
             <Route path="/Candidates" component={Candidates} />
+            <Route path="/Applications" component={Applications} />
           </Router>
         </div>
       </div>

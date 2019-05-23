@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Alert } from "react-bootstrap";
+import "./companies.css";
+import { Button, Alert, Col } from "react-bootstrap";
 export default class Company extends React.Component {
   render() {
     return (

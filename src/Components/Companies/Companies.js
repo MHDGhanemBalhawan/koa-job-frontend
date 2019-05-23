@@ -1,5 +1,6 @@
 import React from "react";
 import Company from "./Company";
+import "./companies.css";
 import Job from "../Jobs/Job";
 import HttpService from "../../services/http-service";
 import { Container, Row, Col } from "react-bootstrap";
@@ -27,7 +28,7 @@ export default class Companies extends React.Component {
   };
   companiesList = () => {
     let list = this.state.companies.map(company => (
-      <Container className="text-center fluid" key={company.id}>
+      <Container key={company.id}>
         <Row>
           <Col>
             <Company
@@ -38,18 +39,21 @@ export default class Companies extends React.Component {
             />
           </Col>
         </Row>
-        <Row>
-          {company.Jobs.map(job => (
-            <Job
-              key={job.id}
-              id={job.id}
-              title={job.title}
-              createdAt={job.createdAt}
-              updatedAt={job.updatedAt}
-              companyId={job.CompanyId}
-            />
-          ))}
-        </Row>
+        <div className="container-fluid">
+          <Row className="justify-content-md-center">
+            {company.Jobs.map(job => (
+              <Job
+                key={job.id}
+                id={job.id}
+                title={job.title}
+                createdAt={job.createdAt}
+                updatedAt={job.updatedAt}
+                companyId={job.CompanyId}
+              />
+            ))}
+          </Row>
+        </div>
+
         <br />
         <hr />
       </Container>
