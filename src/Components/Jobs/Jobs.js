@@ -23,7 +23,7 @@ export default class Jobs extends React.Component {
         self.setState({ Jobs: data });
         console.log(data);
       },
-      err => {}
+      err => { }
     );
   };
   JobsList = () => {

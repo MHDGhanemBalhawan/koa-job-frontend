@@ -1,7 +1,7 @@
 import React from "react";
 import Candidate from "./Candidate";
 
-// import Job from "../Jobs/Job";
+import Job from "../Jobs/Job";
 import HttpService from "../../services/http-service";
 import { Container, Row, Col } from "react-bootstrap";
 const http = new HttpService();
@@ -23,14 +23,14 @@ export default class Candidates extends React.Component {
       candidatesData => {
         self.setState({ candidates: candidatesData });
       },
-      err => {}
+      err => { }
     );
   };
   CandidatesList = () => {
     let candidateList = this.state.candidates.map(candidate => (
       <Container className="text-center fluid" key={candidate.id}>
-        <Row>
-          <Col>
+        <Row key={candidate.id}>
+          <Col key={candidate.id}>
             <Candidate
               id={candidate.id}
               firstName={candidate.firstName}
@@ -45,7 +45,7 @@ export default class Candidates extends React.Component {
         <hr />
       </Container>
     ));
-    // console.log(candidateList);
+    console.log(candidateList);
     return candidateList;
   };
 
